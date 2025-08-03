@@ -9,4 +9,4 @@ import { MongoDBService } from './mongodb/mongodb.service';
   controllers: [AppController, MongodbController],
   providers: [AppService, MongoDBService],
 })
-export class AppModule { }
+export class AppModule {}
