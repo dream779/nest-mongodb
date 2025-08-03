@@ -4,6 +4,7 @@ import { MongoDBService } from './mongodb.service';
 @Controller('mongodb')
 export class MongodbController {
   constructor(private readonly mongodbService: MongoDBService) {
+    console.log(1);
     this.mongodbService.connect();
   }
 
