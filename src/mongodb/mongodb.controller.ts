@@ -3,11 +3,13 @@ import { MongoDBService } from './mongodb.service';
 
 @Controller('mongodb')
 export class MongodbController {
-  constructor(private readonly mongodbService: MongoDBService) {}
+  constructor(private readonly mongodbService: MongoDBService) {
+    this.mongodbService.connect();
+  }
 
   @Get()
   async getHello() {
-    return this.mongodbService.run();
+    return this.mongodbService.connect();
   }
 
   @Get('insert')

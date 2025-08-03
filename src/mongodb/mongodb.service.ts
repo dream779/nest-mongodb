@@ -14,20 +14,17 @@ export class MongoDBService {
     },
   });
 
-  async run() {
+  // 连接mongodb，必备操作
+  async connect() {
     try {
+      console.log('connecting to MongoDB');
       // Connect the client to the server	(optional starting in v4.7)
       await this.client.connect();
       // Send a ping to confirm a successful connection
       await this.client.db('admin').command({ ping: 1 });
-      console.log(
-        'Pinged your deployment. You successfully connected to MongoDB!!!',
-      );
+      console.log('连接MongoDB成功!!');
     } catch (error) {
-      console.error('Error connecting to MongoDB', error);
-    } finally {
-      // Ensures that the client will close when you finish/error
-      await this.client.close();
+      console.error('连接MongoDB失败: ', error);
     }
   }
 
@@ -45,7 +42,7 @@ export class MongoDBService {
     });
   }
 
-  getData() {
+  async getData() {
     const db = this.client.db('test');
     const collection = db.collection('users');
     return collection.find({}).toArray();
