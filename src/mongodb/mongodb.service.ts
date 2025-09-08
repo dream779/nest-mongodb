@@ -28,7 +28,7 @@ export class MongoDBService {
     }
   }
 
-  insertData() {
+  async insertData() {
     const db = this.client.db('test');
     const collection = db.collection('users');
     collection.insertOne({

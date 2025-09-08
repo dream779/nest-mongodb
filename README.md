@@ -21,4 +21,7 @@ $ yarn start:dev
 $ yarn start:prod
 ```
 
+## 安全性
+如果没法连接MongoDB，去MongoDB atlas-Network Access配置ip白名单
+
 访问localhost:3000
