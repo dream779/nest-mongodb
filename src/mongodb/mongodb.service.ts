@@ -20,7 +20,7 @@ export class MongoDBService {
       console.log('connecting to MongoDB');
       // Connect the client to the server	(optional starting in v4.7)
       await this.client.connect();
-      // Send a ping to confirm a successful connection
+      // Send a ping to confirm a successful connection.
       await this.client.db('admin').command({ ping: 1 });
       console.log('连接MongoDB成功!!');
     } catch (error) {
